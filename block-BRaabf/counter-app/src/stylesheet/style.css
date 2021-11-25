@@ -1,0 +1,44 @@
+body{
+    background-color: aliceblue;
+    line-height: 1.5;
+}
+button{
+    background-color: rgb(62, 172, 104);
+    border: none;
+    margin: 0 1rem;
+    padding: .8rem 1.8rem;
+    color: white;
+    font-size: 2.2rem;
+    border-radius: .2rem;
+    font-weight: lighter;
+}
+
+.buttons{
+    margin-top: 5rem;
+}
+
+.steps{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.steps button{
+    width: 5rem;
+    height: 5rem;
+    background-color: navy;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0rem 1rem;
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+h3{
+    font-size: 1.5rem;
+}
