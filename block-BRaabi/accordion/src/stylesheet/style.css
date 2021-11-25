@@ -8,3 +8,17 @@ h3{
     margin-left: 1rem;
 
 }
+body{
+    background-color: aliceblue;
+}
+.center{
+    text-align: center;
+}
+
+div{
+   
+   text-align: start;
+   margin-left: 15rem;
+   margin-top: 2rem;
+    
+}
