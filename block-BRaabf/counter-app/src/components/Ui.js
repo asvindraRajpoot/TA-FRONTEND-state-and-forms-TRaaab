@@ -7,7 +7,8 @@ class UI extends React.Component{
         this.state={
             count:0,
             step:1,
-            bgColor:"navy"
+            bgColor:"navy",
+            maxValue:Infinity,
         }
 
      
@@ -37,15 +38,39 @@ class UI extends React.Component{
         })
             
     }
+    handleMax15=()=>{
+        this.setState({
+            maxValue:15,
+            
+        })
+            
+    }
+    handleMax100=()=>{
+        this.setState({
+            maxValue:100,
+            
+        })
+            
+    }
+    handleMax200=()=>{
+        this.setState({
+            maxValue:200,
+            
+        })
+            
+    }
+
+
+
     handleIncrement=()=>{
         this.setState({
-            count:this.state.count+this.state.step*1,
+            count:((this.state.maxValue>this.state.count) && (this.state.maxValue>(this.state.step+this.state.count))) ? this.state.count+this.state.step*1:this.state.count,
         })
 
     }
     handleDecrement=()=>{
         this.setState({
-            count:this.state.count-1*this.state.step,
+            count:this.state.maxValue>this.state.count?this.state.count-this.state.step*1:this.state.count,
         })
 
     }
@@ -61,11 +86,24 @@ class UI extends React.Component{
             <center>
               <h1>Counter</h1>
               <h2>{this.state.count}</h2>
-              <h3>Steps</h3>
-              <div className="steps">
-                  <button onClick={this.handle5} >5</button>
-                  <button onClick={this.handle10} >10</button>
-                  <button onClick={this.handle15} >15</button>
+             
+              <div className="max-value">
+                 <div>
+                 <h3>Steps</h3>
+                <div className="steps">
+                    <button onClick={this.handle5} >5</button>
+                    <button onClick={this.handle10} >10</button>
+                    <button onClick={this.handle15} >15</button>
+                </div>
+                 </div>
+                  <div>
+                <h3>Max Value</h3>
+                <div className="steps">
+                    <button onClick={this.handleMax15} >15</button>
+                    <button onClick={this.handleMax100} >100</button>
+                    <button onClick={this.handleMax200} >200</button>
+                </div>
+                  </div>
               </div>
               <div className="buttons">
                  <button onClick={this.handleIncrement}>Increment</button>
