@@ -7,35 +7,36 @@ class Faq extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            open:false,
-            no:0,
+          activeIndex:null,
            
         }
     }
    handleClickOpen=(i)=>{
        this.setState({
-           open:true,
-           no:i,
+           activeIndex:i
          
        })
 
    }
- handleclickClose=(i)=>{
-    this.setState({
-        open:false,
-        no:i,
-      
-    })
-
- }
-
-
 
     render(){
         return (
         <>
+        <h1 className="center"> AltCampus FAQs </h1>
         {
-            questions.map((q,i)=><div><h2>{q.Q}</h2><button onClick={()=>this.handleClickOpen(i)}>Open</button>{this.state.open?<h3>{q.A}<button onClick={()=>this.handleclickClose(i)}>Close</button></h3>:<></>}</div>)
+            questions.map((q,i)=>{
+
+                return (
+                    <div>
+                        <h2 onClick={()=>this.handleClickOpen(i)}>{q.Q}{this.state.activeIndex===i?'👆🏻':'👇🏻'}</h2>
+                         {i===this.state.activeIndex?<h3>{q.A}</h3>:<></>}
+
+                         
+                    </div>
+                )
+            })
+            
+        
         }
         </>
         )
