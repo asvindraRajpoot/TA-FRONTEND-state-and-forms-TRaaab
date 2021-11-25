@@ -24,7 +24,7 @@ button{
     margin-left: 3rem;
     margin-right: 3rem;
 }
-.steps button{
+.steps-button{
     width: 5rem;
     height: 5rem;
     background-color: navy;
@@ -47,4 +47,13 @@ h3{
 .max-value{
     display: flex;
     justify-content: center;
+}
+
+.active{
+    background-color: gray;
+}
+
+
+.inactive{
+    background-color: navy;
 }
