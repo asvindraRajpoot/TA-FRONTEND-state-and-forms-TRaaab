@@ -1,0 +1,41 @@
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+body{
+    line-height: 1.5;
+    background-color: aliceblue;
+}
+
+h1{
+    text-align: center;
+    color: maroon;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    
+}
+button{
+    margin: 0 1rem;
+    padding: .5rem 1rem;
+    background-color: cornsilk;
+    border: 1px solid black;
+    border-radius: .2rem;
+}
+
+.single-image{
+
+    margin: 3rem 0;
+    width: 50%;
+    
+}
+img{
+    width: 100%;
+    border: .2rem solid black;
+    border-radius: .2rem;
+}
