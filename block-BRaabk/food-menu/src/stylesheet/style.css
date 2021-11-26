@@ -1,0 +1,62 @@
+.header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+body{
+    background-color: aliceblue;
+}
+hr{
+    color: black;
+    width: 10rem;
+  
+    border: 2px solid #C09C66;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.food{
+    display: flex;
+    background-color: #C09C66;
+    margin: 1rem 0rem;
+}
+.flex{
+    display: flex;
+}
+.space-between{
+    justify-content: space-between;
+}
+.center{
+    align-items: center;
+}
+.colom{
+    flex-direction: column;
+}
+
+.tags{
+    display: flex;
+    justify-content: center;
+}
+
+span{
+    margin: 0 .8rem;
+    background-color: navy;
+    color: white;
+    padding: 0rem .8rem;
+    font-size: 1rem;
+}
+
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+.price{
+    margin-left: 2rem;
+}
