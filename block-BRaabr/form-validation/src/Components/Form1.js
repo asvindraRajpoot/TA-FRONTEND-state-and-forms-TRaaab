@@ -27,7 +27,7 @@ class Form1 extends React.Component{
     render(){
         return (
             <>
-              <h1>Multiple Inputs</h1>
+              {/* <h1>Multiple Inputs</h1>
               <div className="form-control">
               <form onSubmit={this.handleSubmit}>
                   <label>Text input</label>
@@ -46,7 +46,7 @@ class Form1 extends React.Component{
                   <textarea disabled></textarea>
                   <input type="submit" />
               </form>
-              </div>
+              </div> */}
             </>
         )
 
