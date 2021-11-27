@@ -36,3 +36,30 @@ input[type="file"]{
 input[type="submit"]{
     margin-top: 1.5rem;
 }
+
+.form-control-2{
+    margin-top: 2rem;
+  
+}
+
+.form-control-2 form{
+    background-color: white;
+    padding: 2rem;
+}
+
+input[type="submit"]{
+    background-color: rgb(26, 160, 223);
+    border: none;
+    border: .1rem solid blue;
+    color: white;
+}
+
+.error,span{
+    color: red;
+ 
+
+}
+span{
+    text-align: center;
+    margin-top: .1rem;
+}
