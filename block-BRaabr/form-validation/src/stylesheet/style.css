@@ -1,0 +1,38 @@
+h1{
+    text-align: center;
+}
+
+body{
+    background-color: aliceblue;
+}
+
+.form-control{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+}
+label{
+    margin-top: 1rem;
+    margin-bottom: .2rem;
+    display: inline-block;
+}
+input,textarea{
+    padding: .5rem .8rem;
+}
+
+input[type="file"]{
+    background-color: white;
+    border: .1rem solid black;
+}
+
+input[type="submit"]{
+    margin-top: 1.5rem;
+}
