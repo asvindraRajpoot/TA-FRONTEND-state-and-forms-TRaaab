@@ -9,13 +9,15 @@ class Main extends React.Component {
             cart: 0,
             value: "",
             size: "",
+            cartdata:[],
 
         }
     }
 
-    handleClick = () => {
+    handleClick = (e) => {
         this.setState({
-            cart: this.state.cart + 1
+            cart: this.state.cart + 1,
+            cartData:"",
         })
 
     }
@@ -44,10 +46,24 @@ class Main extends React.Component {
         if (this.state.value === "Select") {
             allData = JSON.parse(JSON.stringify(data));
 
+          }
+        // }else if (this.state.value === "low-to-high") {
+        //     console.log("this is filter only low to high");
 
-        }
-        else if (this.state.value === "low-to-high") {
-            console.log("this is filter");
+        //     allData = allData.products.sort((a, b) => a.price - b.price)
+        //     allData.products = allData;
+
+
+
+
+        // } else if (this.state.value === "high-to-low") {
+        //     console.log("this is filter only high to low");
+        //     allData.products.sort((a, b) => b.price - a.price)
+
+        // } 
+
+        else if (this.state.value === "low-to-high" && !this.state.size ) {
+            console.log("this is filter low to high and not size");
 
             allData = allData.products.sort((a, b) => a.price - b.price)
             allData.products = allData;
@@ -55,13 +71,23 @@ class Main extends React.Component {
 
 
 
-        } else if (this.state.value === "high-to-low") {
-            console.log("this is filter");
+        } else if (this.state.value === "high-to-low" && !this.state.size ) {
+            console.log("this is filter hight to low and not size");
             allData.products.sort((a, b) => b.price - a.price)
 
-        } else if (this.state.size) {
+        } else if (this.state.size && this.state.value === "high-to-low") {
+            allData.products.sort((a, b) => b.price - a.price)
             allData = allData.products.filter((p) => p.availableSizes.includes(this.state.size))
 
+
+            allData.products = allData;
+
+
+        }else if (this.state.size && this.state.value === "low-to-high") {
+            console.log('before done',allData);
+            allData.products.sort((a, b) => a.price - b.price)
+            allData = allData.products.filter((p) => p.availableSizes.includes(this.state.size))
+            console.log('after done',allData);
 
             allData.products = allData;
 
@@ -90,7 +116,7 @@ class Main extends React.Component {
                     <div className="all-size">
 
                         <div className="size">
-                            <button className="size" name="S" onClick={this.handleClickBtn} value={this.state.sizes}>S</button>
+                            <button  className="size" name="S" onClick={this.handleClickBtn} value={this.state.sizes} >S</button>
                         </div>
                         <div className="size">
                             <button className="size" name="XS" onClick={this.handleClickBtn} value={this.state.sizes}>XS</button>
@@ -123,8 +149,12 @@ class Main extends React.Component {
                                     <span>{p.title}</span>
 
                                     <hr />
+                                    <small>Sizes: {p.availableSizes.map(element => {
+                                        return element+','
+                                        
+                                    })}</small>
                                     <small>${p.price}</small>
-                                    <button onClick={this.handleClick}>Add To Cart</button>
+                                    <button onClick={this.handleClick} data-product={p}>Add To Cart</button>
 
                                 </div>
                             )
